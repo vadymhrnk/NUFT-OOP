@@ -1,4 +1,5 @@
-using System.Security.Policy;
+using System;
+using System.Windows.Forms;
 
 namespace Task1
 {
@@ -11,19 +12,32 @@ namespace Task1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string x = textBox1.Text;
-			float number, h , a, b, c;
-			if (!float.TryParse(x, out number))
+			string input = textBox1.Text;
+
+			if (!float.TryParse(input, out float number))
 			{
-				MessageBox.Show("Wrong input.");
+				MessageBox.Show("Invalid input. Please enter a valid number.");
 				return;
 			}
-			a = (float)(Math.Pow(Math.Sin(number), 3) + Math.Pow(number, 4));
-			b = (float)(Math.Sqrt(number) - Math.Log(number));
-			c = (float)(4 * number - 5 * Math.Pow(number, 3));
-			h = (float)(Math.Pow(a, 3) + Math.Pow(b, 2) - 8 * c);
-			textBox2.Text = h.ToString();
 
+			if (number == 0)
+			{
+				MessageBox.Show("Invalid input. Please enter a non-zero number.");
+				return;
+			}
+
+			if (number < 0)
+			{
+				MessageBox.Show("Invalid input. Please enter a non-negative number.");
+				return;
+			}
+
+			double a = Math.Pow(Math.Sin(number), 3) + Math.Pow(number, 4);
+			double b = Math.Sqrt(number) - Math.Log(number);
+			double c = 4 * number - 5 * Math.Pow(number, 3);
+			double h = Math.Pow(a, 3) + Math.Pow(b, 2) - 8 * c;
+
+			textBox2.Text = h.ToString("F2");
 		}
 	}
 }

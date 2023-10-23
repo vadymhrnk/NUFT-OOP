@@ -11,7 +11,7 @@ namespace Task2
 		{
 			string input = textBox1.Text;
 
-			if (input.Length != 4 || !int.TryParse(input, out int number))
+			if (input.Length != 4 || !int.TryParse(input, out int number) || input[0].Equals('0'))
 			{
 				MessageBox.Show("Invalid 4-digit number.");
 				return;
