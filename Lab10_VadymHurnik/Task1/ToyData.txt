@@ -1,0 +1,10 @@
+Doll,25.99,2-5
+Building Blocks,19.95,3-8
+Soccer Ball,12.50,6-12
+Remote Control Car,34.75,8-12
+Puzzle,15.99,4-10
+Action Figure,29.99,5-10
+Board Game,22.50,7-14
+Art Kit,18.75,4-8
+Stuffed Animal,9.99,1-5
+Educational Tablet,49.99,3-7
